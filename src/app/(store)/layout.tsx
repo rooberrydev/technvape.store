@@ -20,7 +20,6 @@ export default async function StoreLayout({
 
 	return (
 		<>
-			<CommerceGPT />
 			<CartModalProvider>
 				<Nav />
 				<TooltipProvider>

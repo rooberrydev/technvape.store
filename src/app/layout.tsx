@@ -6,6 +6,7 @@ import { getLocale, getMessages, getTranslations } from "@/i18n/server";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
+import Head from "next/head";
 import Script from "next/script";
 
 export const generateMetadata = async (): Promise<Metadata> => {
@@ -23,6 +24,13 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 
 	return (
 		<html lang={locale} className="h-full antialiased">
+			<Head>
+				<script
+					defer
+					src="https://cloud.umami.is/script.js"
+					data-website-id="fd294b74-6c1e-46aa-9eec-d226e226e0f4"
+				/>
+			</Head>
 			<body className="flex min-h-full flex-col">
 				<IntlClientProvider messages={messages} locale={locale}>
 					<div className="flex min-h-full flex-1 flex-col bg-white" vaul-drawer-wrapper="">
