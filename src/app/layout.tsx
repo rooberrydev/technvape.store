@@ -8,6 +8,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import Head from "next/head";
 import Script from "next/script";
+import PrelineScript from "./components/PrelineScript";
 
 export const generateMetadata = async (): Promise<Metadata> => {
 	const t = await getTranslations("Global.metadata");
@@ -48,6 +49,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 				)}
 				<SpeedInsights />
 				<Analytics />
+				<PrelineScript />
 			</body>
 		</html>
 	);
