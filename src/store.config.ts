@@ -3,8 +3,11 @@ import ApparelImage from "@/images/apparel.jpg";
 
 export const config = {
 	categories: [
-		{ name: "Apparel", slug: "apparel", image: ApparelImage },
-		{ name: "Accessories", slug: "accessories", image: AccessoriesImage },
+		{ name: "Laptop/PC Repair", slug: "laptoprepair", image: ApparelImage },
+		{ name: "Vape Kits", slug: "vapekits", image: AccessoriesImage },
+		{ name: "Nicotine Salts", slug: "nicotinesalts", image: AccessoriesImage },
+		{ name: "Pods", slug: "pods", image: AccessoriesImage },
+		{ name: "Disposable Vapes", slug: "disposables", image: AccessoriesImage },
 	],
 
 	social: {

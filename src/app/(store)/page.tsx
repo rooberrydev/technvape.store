@@ -34,10 +34,10 @@ export default async function Home() {
 						alt="Cup of Coffee"
 						loading="eager"
 						priority={true}
-						className="rounded"
+						className="rounded-lg"
 						height={450}
 						width={450}
-						src="https://files.stripe.com/links/MDB8YWNjdF8xT3BaeG5GSmNWbVh6bURsfGZsX3Rlc3RfaDVvWXowdU9ZbWlobUIyaHpNc1hCeDM200NBzvUjqP"
+						src="/homepageimage.jpeg"
 						style={{
 							objectFit: "cover",
 						}}

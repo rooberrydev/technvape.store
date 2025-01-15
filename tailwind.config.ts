@@ -5,7 +5,7 @@ import Animate from "tailwindcss-animate";
 
 const config = {
 	darkMode: ["class"],
-	content: ["./src/**/*.{ts,tsx,mdx}", "node_modules/preline/dist/*.js"],
+	content: ["./src/**/*.{ts,tsx,mdx}"],
 	prefix: "",
 	theme: {
 		container: {
@@ -76,7 +76,10 @@ const config = {
 			},
 		},
 	},
-	plugins: [FormsPlugin, TypographyPlugin, Animate, require("preline/plugin")],
+	plugins: [FormsPlugin, TypographyPlugin, Animate, require("daisyui")],
+	daisyui: {
+		themes: ["light", "cupcake", "pastel"],
+	},
 } satisfies Config;
 
 export default config;

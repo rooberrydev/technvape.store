@@ -3,12 +3,12 @@ import { Toaster } from "@/components/ui/sonner";
 import { env, publicUrl } from "@/env.mjs";
 import { IntlClientProvider } from "@/i18n/client";
 import { getLocale, getMessages, getTranslations } from "@/i18n/server";
+import { Modal } from "@/ui/modal";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import Head from "next/head";
 import Script from "next/script";
-import PrelineScript from "./components/PrelineScript";
 
 export const generateMetadata = async (): Promise<Metadata> => {
 	const t = await getTranslations("Global.metadata");
@@ -24,7 +24,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 	const messages = await getMessages();
 
 	return (
-		<html lang={locale} className="h-full antialiased">
+		<html lang={locale} className="h-full antialiased" data-theme="pastel">
 			<Head>
 				<script
 					defer
@@ -33,6 +33,14 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 				/>
 			</Head>
 			<body className="flex min-h-full flex-col">
+				<Modal
+					title="Age Confirmation"
+					text="Are you over 18 years old?"
+					confirmText="Yes, I am over 18"
+					cancelText="No, I am under 18"
+					redirectOnCancel={true}
+					allowDialogDismiss={false}
+				/>
 				<IntlClientProvider messages={messages} locale={locale}>
 					<div className="flex min-h-full flex-1 flex-col bg-white" vaul-drawer-wrapper="">
 						{children}
@@ -49,7 +57,6 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 				)}
 				<SpeedInsights />
 				<Analytics />
-				<PrelineScript />
 			</body>
 		</html>
 	);
