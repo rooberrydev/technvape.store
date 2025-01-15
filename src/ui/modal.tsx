@@ -32,7 +32,7 @@ export function Modal({
 		modal.current?.showModal();
 	}, []);
 
-	const handleKeyDown = (e) => {
+	const handleKeyDown = (e: { key: string; preventDefault: () => void }) => {
 		if (e.key !== "Escape") return;
 		if (!allowDialogDismiss) e.preventDefault();
 	};
